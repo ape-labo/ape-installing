@@ -1,0 +1,17 @@
+Usage
+---------
+
+### Install a Module Unless Installed globally.
+
+```javascript
+{{{read 'example/example-unless-global.js'}}}
+```
+#### Options for unlessGlobal
+
+| Key | Type | Default | Description |
+| --- | --- | --- | --- |
+| cwd | string | process.cwd() | Working directory path. |
+| bin | string | name | Name of bin. |
+| save | boolean | false | Save to package.json |
+| saveDev | boolean | false | Save as dev to package.json |
+| global | boolean | false | Save as global module. |
