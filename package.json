@@ -1,6 +1,6 @@
 {
   "name": "ape-installing",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "ape framework module for installing modules.",
   "main": "lib",
   "scripts": {

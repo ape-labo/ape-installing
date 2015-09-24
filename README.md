@@ -79,6 +79,7 @@ apeInstalling.unlessGlobal('mocha', function (err) {
 | save | boolean | false | Save to package.json |
 | saveDev | boolean | false | Save as dev to package.json |
 | global | boolean | false | Save as global module. |
+| exit | boolean | false | Exit process when done. |
 <!-- Section from "doc/readme/02.Usage.md.hbs" End -->
 
 
