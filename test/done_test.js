@@ -1,20 +1,25 @@
 /**
  * Test case for done.
- * Runs with nodeunit.
+ * Runs with mocha.
  */
+"use strict";
 
-var done = require('../lib/done.js');
+const done = require('../lib/done.js'),
+    assert = require('assert');
 
-exports.setUp = function(done) {
-    done();
-};
+describe('done', () => {
 
-exports.tearDown = function(done) {
-    done();
-};
+    before((done) => {
+        done();
+    });
 
-exports['Done'] = function(test){
+    after((done) => {
+        done();
+    });
 
-    test.done();
-};
+
+    it('Done', (done) => {
+        done();
+    });
+});
 

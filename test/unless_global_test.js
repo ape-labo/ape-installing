@@ -1,27 +1,31 @@
 /**
  * Test case for unlessGlobal.
- * Runs with nodeunit.
+ * Runs with mocha.
  */
+"use strict";
 
-var unlessGlobal = require('../lib/unless_global.js'),
+const unlessGlobal = require('../lib/unless_global.js'),
+    assert = require('assert'),
     injectmock = require('injectmock');
 
-exports.setUp = function (done) {
-    done();
-};
-
-exports.tearDown = function (done) {
-    injectmock.restoreAll();
-    done();
-};
-
-exports['Unless global'] = function (test) {
-    injectmock(unlessGlobal, 'npm', function (args, callback) {
-        callback(null);
+describe('unlessGlobal', () => {
+    before((done) => {
+        done();
     });
-    unlessGlobal('foo', {}, function (err) {
-        test.ifError(err);
-        test.done();
+
+    after((done)  => {
+        injectmock.restoreAll();
+        done();
     });
-};
+
+    it('Unless global', (done) => {
+        injectmock(unlessGlobal, 'npm', (args, callback) => {
+            callback(null);
+        });
+        unlessGlobal('foo', {}, (err) => {
+            assert.ifError(err);
+            done();
+        });
+    });
+});
 
